@@ -9,34 +9,23 @@ export default function CreatePost() {
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
   const [name, setName] = useState("Anakin Skywalker");
-  const [photo, setPhoto] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [date, setDate] = useState(new Date().toLocaleDateString("en-GB", { month: "short", day: "numeric"}));
-  const [comments, setComments] = useState("");
-  const [repeats, setRepeats] = useState("");
-  const [likes, setLikes] = useState("");
 
-  const dispatch = useDispatch();
-  const onCreatePost = (ev) => {
-    ev.preventDefault();
-    const getName = AUTHORS_DATA.find((item) => item.name === name);
-
+  const dispatch = useDispatch(); 
+  const onCreatePost = (ev) => { 
+    ev.preventDefault(); 
+    const getName = AUTHORS_DATA.find((item) => item.name === name); 
     dispatch(addPost({ 
-      author: {
-        name: getName,
-        photo,
-        nickname,
-      },
-      content,
-      image,
-      date,
-      comments,
-      repeats,
-      likes
-    }));
-    setName("Anakin Skywalker");
-    setContent("");
-    setImage("");
+      author: name ? getName : AUTHORS_DATA[0],
+      content, 
+      image, 
+      date: new Date().toLocaleDateString("en-GB", { month: "short", day: "numeric"}),
+      comments: 0,
+      repeats: 0,
+      likes: 0
+    })); 
+    setContent(""); 
+    setImage(""); 
+    setName(""); 
   };
 
   return (

@@ -7,7 +7,6 @@ export default function Posts(){
     const posts = useSelector((state) => state.posts);
 
     return (
-        <>
         <div className="posts">
             <CreatePost />
             {
@@ -21,6 +20,5 @@ export default function Posts(){
             })
             }
         </div>
-        </>
     );
 }

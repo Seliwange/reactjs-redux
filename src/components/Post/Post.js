@@ -10,7 +10,6 @@ export default function Post({author, content, image, date, comments, repeats, l
     const [like, setLike] = useState(0);
 
     return (
-        <>
         <div className="post">
             <div className="post__wrapper">
                 <img className="post__avatar" src={photo} alt={name} />
@@ -29,10 +28,8 @@ export default function Post({author, content, image, date, comments, repeats, l
                         <p onClick={() => setLike(count => count ? count - 1 : count + 1)}><RiHeart3Line /><span>{likes + like}</span></p>
                         <p><RiUpload2Line /></p>
                     </div>
-
                 </div>
             </div>
         </div>
-        </>
     );
 }
