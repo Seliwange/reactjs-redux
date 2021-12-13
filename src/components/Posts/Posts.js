@@ -16,7 +16,6 @@ export default function Posts(){
                 author={post.author}
                 content={post.content}
                 image={post.image}
-                date={post.date}
                 {...post}
                 />
             })

@@ -10,7 +10,10 @@ const posts = [
         },
         content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",
         image: RAY_IMAGE,
-        date: "26 февр."
+        date: "26 февр.",
+        comments: 124,
+        repeats: 25,
+        likes: 630,
     },
     {
         author: {
@@ -20,7 +23,10 @@ const posts = [
         },
         content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",
         image: RAY_IMAGE,
-        date: "26 февр."
+        date: "26 февр.",
+        comments: 785,
+        repeats: 123,
+        likes: 1550,
     },
     {
         author: {
@@ -30,7 +36,10 @@ const posts = [
         },
         content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",
         image: RAY_IMAGE,
-        date: "26 февр."
+        date: "26 февр.",
+        comments: 10,
+        repeats: 1,
+        likes: 30,
     }
   ];
 

@@ -50,3 +50,19 @@
     width: 100%;
     border-radius: 20px;
 }
+.post__icons{
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: grey;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.post__icons p{
+    display: flex;
+    align-items: center;
+}
+.post__icons span{
+    font-size: 1rem;
+    margin-left: 5px;
+}

@@ -6,36 +6,54 @@ import AUTHORS_DATA from "../AuthorList/Data";
 import './FormCreatePost.css';
 
 export default function CreatePost() {
-  const [text, setText] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState("");
-  const [author, setAuthor] = useState("");
+  const [name, setName] = useState("Anakin Skywalker");
+  const [photo, setPhoto] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [date, setDate] = useState(new Date().toLocaleDateString("en-GB", { month: "short", day: "numeric"}));
+  const [comments, setComments] = useState("");
+  const [repeats, setRepeats] = useState("");
+  const [likes, setLikes] = useState("");
 
   const dispatch = useDispatch();
   const onCreatePost = (ev) => {
     ev.preventDefault();
-    dispatch(addPost({ text, image, author }));
-    setText("");
+    const getName = AUTHORS_DATA.find((item) => item.name === name);
+
+    dispatch(addPost({ 
+      author: {
+        name: getName,
+        photo,
+        nickname,
+      },
+      content,
+      image,
+      date,
+      comments,
+      repeats,
+      likes
+    }));
+    setName("Anakin Skywalker");
+    setContent("");
     setImage("");
-    setAuthor("");
   };
 
   return (
     <form className="form__create-post" onSubmit={onCreatePost}>
       <textarea
         placeholder="Write text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
       />
-      <label for="post-img">Choose a post picture:</label>
+      <label htmlFor="post-img">Choose a post picture:</label>
       <input 
-        type="file"
         id="post-img" 
         name="post-img"
-        accept="image/png, image/jpeg"
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
-      <select name="author" value={author} onChange={(e) => setAuthor(e.target.value)}>
+      <select name="author" value={name} onChange={(e) => setName(e.target.value)}>
         <Options options={AUTHORS_DATA} />
       </select>
       <button type="submit" onClick={onCreatePost}>
