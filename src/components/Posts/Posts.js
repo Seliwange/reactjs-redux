@@ -1,14 +1,14 @@
 import './Posts.css';
 import Post from '../Post/Post';
 import { useSelector } from 'react-redux';
-import CreatePost from '../FormCreatePost/FormCreatePost';
+import FormCreatePost from '../FormCreatePost/FormCreatePost';
 
 export default function Posts(){
     const posts = useSelector((state) => state.posts);
 
     return (
         <div className="posts">
-            <CreatePost />
+            <FormCreatePost />
             {
             posts.map((post) => {
                 return <Post 

@@ -5,7 +5,7 @@ import Options from "../AuthorList/AuthorList";
 import AUTHORS_DATA from "../AuthorList/Data";
 import './FormCreatePost.css';
 
-export default function CreatePost() {
+export default function FormCreatePost() {
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
   const [name, setName] = useState("Anakin Skywalker");
